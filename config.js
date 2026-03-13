@@ -54,7 +54,7 @@ var CFG = {
      Deixe "" para exibir o placeholder
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
-  youtubeId: "",
+  youtubeId: "XYt0uxBbpSA",
 
 
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
