@@ -1,16 +1,14 @@
-/**
- * main.js — Lógica da página de vendas
- * Não precisa editar este arquivo.
- * Todas as configurações ficam em config.js
- */
+/* ===========================================
+   TESOUROS DA BÍBLIA KIDS — MAIN.JS
+   =========================================== */
+
 (function () {
   var c = CFG;
-  var wUrl = "https://wa.me/" + c.wppNum + "?text=" + encodeURIComponent(c.wppMsg);
+  var wUrl = "https://wa.me/" + c.wppNum + "?text=" + encodeURIComponent(c.wppMsg || "Olá! Tenho uma dúvida sobre o Tesouros da Bíblia Kids.");
 
   function s(id, v) { var e = document.getElementById(id); if (e) e.textContent = v; }
   function h(id, v) { var e = document.getElementById(id); if (e) e.href = v; }
 
-  /* ── APLICA CONFIGURAÇÃO ── */
   function apply() {
     // Nav
     h("navCta", c.linkFam);
@@ -19,26 +17,45 @@
     h("heroCta", c.linkFam);
     s("trustFam", c.familias);
     s("trustPreco", "a partir de " + c.indPor);
-    // Urgência — sem negrito, texto limpo (Fix 4)
     s("urgFam", c.familias);
-    // Contador
     s("cdPor", c.indPor);
     s("cdDe", c.indDe);
-    // Depoimentos badge
-    s("testiBadge", "Mais de 500 famílias já começaram");
-    // CTA inline 1 — após histórias preview
+    s("testiBadge", "Mais de " + c.familias + " já começaram");
+    
+    // CTAs NOVOS
     h("storiesCta", c.linkFam);
-    s("storiesFrom", c.indDe);
-    s("storiesPor", c.indPor);
-    // CTA inline 2 — meio dos depoimentos
+    s("storiesFrom", c.famDe);
+    s("storiesPor", c.famPor);
+    
     h("testiMidCta", c.linkFam);
     s("testiMidFrom", c.famDe);
     s("testiMidPor", c.famPor);
-    // CTA inline 3 — após todos os depoimentos
+    
     h("testiEndCta", "#planos");
     s("testiEndFrom", c.indDe);
     s("testiEndPor", c.indPor);
-    // Âncora familiar
+    
+    // Banner no meio dos depoimentos
+    if (document.getElementById('bannerBtn')) {
+      document.getElementById('bannerBtn').href = c.linkFam;
+      s('bannerFrom', c.famDe);
+      s('bannerMain', c.famPor);
+    }
+    
+    // CTA após depoimentos
+    if (document.getElementById('ctaDepoBtn')) {
+      document.getElementById('ctaDepoBtn').href = c.linkFam;
+      s('ctaDepoFrom', c.famDe);
+      s('ctaDepoMain', c.famPor);
+    }
+    
+    // Mini CTA flutuante
+    if (document.getElementById('miniBtn')) {
+      document.getElementById('miniBtn').href = c.linkFam;
+      s('miniFrom', c.famDe.replace('R$', 'R$'));
+      s('miniMain', c.famPor.replace('R$', 'R$'));
+    }
+    
     s("paFrom", c.famDe);
     s("paMain", c.famPor);
     s("paPer", c.famPer);
@@ -48,22 +65,22 @@
       s("paSave", "Economia de R$ " + (de - por).toFixed(0) + ",00 nessa oferta");
     }
     h("paCta", c.linkFam);
-    // Planos
+    
     s("pIFrom", c.indDe); s("pIMain", c.indPor); s("pIPer", c.indPer); h("pIBtn", c.linkInd);
     s("pFFrom", c.famDe); s("pFMain", c.famPor); s("pFPer", c.famPer); h("pFBtn", c.linkFam);
     s("pGFrom", c.igrDe); s("pGMain", c.igrPor); s("pGPer", c.igrPer); h("pGBtn", c.linkIgr);
-    // Final
+    
     s("fpFrom", c.indDe);
     s("fpMain", c.indPor);
     h("finalCta", c.linkFam);
-    // Sticky
+    
     h("stickyBtn", c.linkFam);
     s("stickyTxt", "Quero Ensinar Meu Filho — " + c.famPor);
     s("stickyDe", "De " + c.famDe + " por apenas " + c.famPor);
-    // WhatsApp
+    
     h("wppF", wUrl);
     h("wppFoot", wUrl);
-    // Vídeo
+    
     if (c.youtubeId && c.youtubeId.length > 3) {
       var ph = document.getElementById("vidPh");
       if (ph) {
@@ -77,7 +94,6 @@
     }
   }
 
-  /* ── VÍDEO PLACEHOLDER CLICK ── */
   window.doVideo = function () {
     if (c.youtubeId && c.youtubeId.length > 3) {
       var ph = document.getElementById("vidPh");
@@ -91,7 +107,6 @@
     }
   };
 
-  /* ── CONTADOR REGRESSIVO ── */
   function initTimer() {
     var KEY = "tbk_end";
     var now = Date.now();
@@ -127,7 +142,6 @@
     setInterval(tick, 1000);
   }
 
-  /* ── FAQ ── */
   window.doFaq = function (el) {
     var it = el.parentElement;
     var op = it.classList.contains("open");
@@ -135,7 +149,6 @@
     if (!op) it.classList.add("open");
   };
 
-  /* ── SCROLL REVEAL ── */
   function initReveal() {
     var ob = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
@@ -145,114 +158,10 @@
     document.querySelectorAll(".rev").forEach(function (el) { ob.observe(el); });
   }
 
-  /* ── DEMO STORIES — cards e modal ── */
-  var readCount = 0;
-  var readIds = {};
-  try { readIds = JSON.parse(localStorage.getItem("tbk_read") || "{}"); readCount = Object.keys(readIds).length; } catch(e) {}
-
-  var thumbColors = ["sg1","sg2","sg3","sg4"];
-
-  function renderGrid() {
-    var grid = document.getElementById("demoGrid");
-    if (!grid || !window.DEMO_STORIES) return;
-    grid.innerHTML = "";
-    DEMO_STORIES.forEach(function(story, idx) {
-      var done = readIds[story.id];
-      var card = document.createElement("div");
-      card.className = "scard";
-      card.onclick = function() { openStory(story); };
-      card.innerHTML =
-        '<div class="sthumb ' + thumbColors[idx % 4] + '" style="position:relative">' +
-          '<span style="font-size:2.8rem">' + story.emoji + '</span>' +
-          (done ? '<div style="position:absolute;top:8px;right:8px;background:#1E8449;color:#fff;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:.75rem">✓</div>' : '') +
-        '</div>' +
-        '<div class="si">' +
-          '<h4>' + story.title + '</h4>' +
-          '<span>' + story.ref + '</span>' +
-        '</div>' +
-        '<div class="scard-hint">Toque para ler</div>';
-      grid.appendChild(card);
-    });
-  }
-
-  function openStory(story) {
-    var modal = document.getElementById("storyModal");
-    document.getElementById("smCategory").textContent = story.category;
-    document.getElementById("smRef").textContent = story.ref;
-    document.getElementById("smEmoji").textContent = story.emoji;
-    document.getElementById("smTitle").textContent = story.title;
-    // Corpo
-    var body = document.getElementById("smBody");
-    body.innerHTML = "";
-    story.story.forEach(function(p) {
-      var div = document.createElement("div");
-      div.className = "sm-para";
-      div.textContent = p;
-      body.appendChild(div);
-    });
-    // Lições
-    var list = document.getElementById("smLessons");
-    list.innerHTML = "";
-    story.lesson.forEach(function(l) {
-      var li = document.createElement("li");
-      li.textContent = l;
-      list.appendChild(li);
-    });
-    // Botão lida
-    updateReadBtn(story.id);
-    document.getElementById("smReadBtn").onclick = function() { markRead(story.id); };
-    // CTA
-    h("smCta", c.linkFam);
-    // Abre
-    modal.classList.add("open");
-    modal.querySelector(".story-modal-box").scrollTop = 0;
-    document.body.style.overflow = "hidden";
-  }
-
-  function updateReadBtn(id) {
-    var done = readIds[id];
-    var btn = document.getElementById("smReadBtn");
-    var ico = document.getElementById("smReadIcon");
-    var txt = document.getElementById("smReadTxt");
-    var cnt = document.getElementById("smReadCount");
-    if (done) {
-      btn.classList.add("done");
-      ico.textContent = "✓";
-      txt.textContent = "Lida!";
-    } else {
-      btn.classList.remove("done");
-      ico.textContent = "○";
-      txt.textContent = "Marcar como lida";
-    }
-    cnt.textContent = Object.keys(readIds).length;
-  }
-
-  window.markRead = function(id) {
-    if (!id) return;
-    if (readIds[id]) {
-      delete readIds[id];
-    } else {
-      readIds[id] = true;
-    }
-    try { localStorage.setItem("tbk_read", JSON.stringify(readIds)); } catch(e) {}
-    updateReadBtn(id);
-    renderGrid();
-  };
-
-  window.closeStory = function() {
-    var modal = document.getElementById("storyModal");
-    modal.classList.remove("open");
-    document.body.style.overflow = "";
-  };
-
-  // Fechar com ESC
-  document.addEventListener("keydown", function(e) {
-    if (e.key === "Escape") window.closeStory();
+  document.addEventListener('DOMContentLoaded', function() {
+    apply();
+    initTimer();
+    initReveal();
   });
 
-  /* ── INIT ── */
-  apply();
-  initTimer();
-  initReveal();
-  renderGrid();
 })();
