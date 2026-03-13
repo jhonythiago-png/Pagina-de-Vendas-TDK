@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80">
+  <!-- fundo circular -->
+  <circle cx="40" cy="40" r="40" fill="#FDE8D8"/>
+  <!-- corpo / camisa -->
+  <ellipse cx="40" cy="72" rx="22" ry="14" fill="#E8A0BF"/>
+  <!-- pescoço -->
+  <rect x="34" y="54" width="12" height="10" rx="4" fill="#F5C5A3"/>
+  <!-- rosto -->
+  <ellipse cx="40" cy="38" rx="18" ry="20" fill="#F5C5A3"/>
+  <!-- cabelo fundo (longo) -->
+  <ellipse cx="40" cy="26" rx="19" ry="14" fill="#3D1A00"/>
+  <rect x="21" y="26" width="7" height="28" rx="3" fill="#3D1A00"/>
+  <rect x="52" y="26" width="7" height="28" rx="3" fill="#3D1A00"/>
+  <!-- topo cabelo -->
+  <ellipse cx="40" cy="20" rx="19" ry="10" fill="#3D1A00"/>
+  <!-- sobrancelhas -->
+  <path d="M28 30 Q33 27 37 29" stroke="#3D1A00" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  <path d="M43 29 Q47 27 52 30" stroke="#3D1A00" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  <!-- olhos -->
+  <ellipse cx="33" cy="35" rx="4" ry="3.5" fill="white"/>
+  <ellipse cx="47" cy="35" rx="4" ry="3.5" fill="white"/>
+  <circle cx="33" cy="35" r="2.2" fill="#5C3A1E"/>
+  <circle cx="47" cy="35" r="2.2" fill="#5C3A1E"/>
+  <circle cx="34" cy="34" r=".7" fill="white"/>
+  <circle cx="48" cy="34" r=".7" fill="white"/>
+  <!-- nariz -->
+  <path d="M39 39 Q38 43 40 44 Q42 43 41 39" stroke="#D4956A" stroke-width="1" fill="none" stroke-linecap="round"/>
+  <!-- bochechas -->
+  <ellipse cx="27" cy="43" rx="5" ry="3" fill="#F4A0A0" opacity=".45"/>
+  <ellipse cx="53" cy="43" rx="5" ry="3" fill="#F4A0A0" opacity=".45"/>
+  <!-- sorriso -->
+  <path d="M32 48 Q40 54 48 48" stroke="#C0705A" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  <!-- lábio superior sutil -->
+  <path d="M34 48 Q40 46 46 48" stroke="#D4856A" stroke-width="1" fill="none" stroke-linecap="round"/>
+</svg>
