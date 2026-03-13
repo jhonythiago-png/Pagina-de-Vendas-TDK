@@ -49,7 +49,7 @@ var CFG = {
 
      Como pegar o ID:
      Link do YouTube: https://youtu.be/XYt0uxBbpSA
-     ID = tudo após "v="  →  dQw4w9WgXcQ
+     ID = tudo após "v="  →  XYt0uxBbpSA
 
      Deixe "" para exibir o placeholder
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
