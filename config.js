@@ -48,8 +48,8 @@ var CFG = {
      (Não listado = aparece com link, Privado = não aparece)
 
      Como pegar o ID:
-     Link do YouTube: https://www.youtube.com/watch?v=XYt0uxBbpSA
-     ID = tudo após "v="  →  XYt0uxBbpSA
+     Link do YouTube: 'https://www.youtube.com/watch?v=XYt0uxBbpSA'
+     ID = tudo após "v="  →  'XYt0uxBbpSA'
 
      Deixe "" para exibir o placeholder
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
