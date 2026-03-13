@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tesouros da Bíblia Kids — 365 Histórias Bíblicas para Seus Filhos</title>
+  <meta name="description" content="365 histórias bíblicas adaptadas para crianças de 4 a 12 anos. Acesso imediato no celular ou computador. Crie o hábito do devocional em família."/>
+  <meta property="og:title" content="Tesouros da Bíblia Kids"/>
+  <meta property="og:description" content="365 histórias bíblicas para crianças de 4 a 12 anos. Acesso imediato."/>
+  <meta property="og:type" content="website"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- BARRA DE URGÊNCIA -->
+<div class="urg">
+  Oferta por tempo limitado — encerra em
+  <span class="urg-t" id="topTimer">--:--:--</span>
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+  <span id="urgFam"></span> já criando o hábito do devocional
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="n-logo">Tesouros da <span>Bíblia Kids</span></div>
+  <a class="n-cta" id="navCta" href="#">Quero Ensinar Meu Filho</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="h-in">
+    <div class="h-badge" id="heroBadge"></div>
+    <h1>Seus filhos estão crescendo...<br/>mas quem está ensinando os valores<br/>que vão <em>guiá-los pela vida?</em></h1>
+    <p class="h-sub">Descubra uma forma simples e encantadora de ensinar a Palavra de Deus aos seus filhos em apenas alguns minutos por dia.</p>
+    <div class="vid-wrap">
+      <div class="vid-ratio" id="vidContainer">
+        <div class="vid-ph" id="vidPh" onclick="doVideo()">
+          <div class="play-c">&#9658;</div>
+          <div class="pl">Assista e veja como funciona</div>
+          <div class="ps">3 min 14 seg — demonstração do app</div>
+        </div>
+      </div>
+    </div>
+    <p class="vid-note">Assista ao vídeo completo antes de continuar na página</p>
+    <a class="btn-m" id="heroCta" href="#">Quero Ensinar Meu Filho Agora &nbsp;&#8594;</a>
+    <div class="trust">
+      <span id="trustFam"></span>
+      <span>Acesso imediato</span>
+      <span>Garantia de 7 dias</span>
+      <span id="trustPreco"></span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTADOR -->
+<div class="cd-sec">
+  <div class="cd-lbl">Oferta especial encerra em</div>
+  <div class="cd-wrap">
+    <div class="cd-bl"><span class="cd-n" id="cdH">00</span><span class="cd-ll">horas</span></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-bl"><span class="cd-n" id="cdM">00</span><span class="cd-ll">minutos</span></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-bl"><span class="cd-n" id="cdS">00</span><span class="cd-ll">segundos</span></div>
+  </div>
+  <div class="cd-note">Preço atual: <strong id="cdPor"></strong> &nbsp;•&nbsp; De <span id="cdDe"></span> por esse valor</div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-in">
+    <div class="s-it rev"><div class="s-n">365</div><div class="s-l">histórias bíblicas</div></div>
+    <div class="s-it rev"><div class="s-n">4–12</div><div class="s-l">anos de idade</div></div>
+    <div class="s-it rev"><div class="s-n">500+</div><div class="s-l">famílias usando</div></div>
+    <div class="s-it rev"><div class="s-n">100%</div><div class="s-l">fiel à Bíblia</div></div>
+  </div>
+</div>
+
+<!-- PROBLEMA -->
+<section class="prob rev">
+  <div class="wrap tc">
+    <span class="badge">Realidade de muitas famílias hoje</span>
+    <h2>Você sente que deveria ensinar mais a Bíblia<br/>aos seus filhos... <em>mas a rotina sempre atrapalha?</em></h2>
+    <p class="prob-intro">Essa é a realidade de muitos pais cristãos. Não por falta de amor — mas porque ninguém ensinou como transformar isso em um hábito simples.</p>
+  </div>
+  <div class="prob-grid wrap">
+    <div class="pc"><p>Você quer criar momentos com Deus em família, mas no fim do dia falta energia, tempo e direção.</p></div>
+    <div class="pc"><p>Já procurou materiais bíblicos infantis, mas quase nada parece bonito, simples e <strong>fiel à Palavra</strong>.</p></div>
+    <div class="pc"><p>Às vezes você até tenta contar uma história bíblica, mas sente dificuldade em explicar de um jeito que a criança entenda.</p></div>
+    <div class="pc"><p>No fundo, existe aquele receio: <strong>ver seus filhos crescendo sem intimidade com Deus.</strong></p></div>
+  </div>
+  <p class="prob-close wrap">Muitos pais cristãos passam por esse mesmo desafio. <strong>A boa notícia é que não precisa ser complicado.</strong></p>
+</section>
+
+<!-- SOLUÇÃO -->
+<section class="sol">
+  <div class="sol-in rev">
+    <h2>Conheça o <em>Tesouros da Bíblia Kids</em> —<br/>um jeito simples e encantador de criar<br/>o hábito do devocional em família</h2>
+    <p>São 365 histórias bíblicas escritas para crianças, com linguagem acessível e uma estrutura que transforma poucos minutos do seu dia em um momento especial com Deus em família.</p>
+    <div class="sol-card">
+      <h3>Tesouros da Bíblia Kids</h3>
+      <p>Uma história bíblica para cada dia do ano, adaptada para crianças de 4 a 12 anos, com lições práticas de vida. Acesso imediato no celular, tablet ou computador — sem instalar nada.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="feat">
+  <div class="wrap tc rev">
+    <h2>Histórias que <em>prendem a atenção</em> da criança<br/>e abrem espaço para ensinar valores eternos</h2>
+    <p class="feat-sub">Cada história foi pensada para envolver a criança, despertar curiosidade e abrir espaço para conversas sobre fé dentro de casa.</p>
+  </div>
+  <div class="feat-grid rev">
+    <div class="fc"><div class="fc-ico">&#128218;</div><h3>365 Histórias Bíblicas</h3><p>Uma história para cada dia do ano. Linguagem simples e envolvente, do Gênesis ao Apocalipse.</p></div>
+    <div class="fc"><div class="fc-ico">&#128161;</div><h3>Lições Práticas de Vida</h3><p>Cada história termina com perguntas e lições para conversar com seus filhos. Está tudo pronto.</p></div>
+    <div class="fc"><div class="fc-ico">&#128241;</div><h3>Qualquer Dispositivo</h3><p>Celular, tablet ou computador. Só abrir o navegador e acessar. Sem instalação, sem complicação.</p></div>
+    <div class="fc"><div class="fc-ico">&#9729;</div><h3>Progresso na Nuvem</h3><p>Histórias lidas ficam marcadas automaticamente. Seus filhos acompanham o próprio progresso.</p></div>
+    <div class="fc"><div class="fc-ico">&#128140;</div><h3>Histórias por Tema</h3><p>Antigo Testamento, Vida de Jesus, Heróis da Fé, Parábolas e muito mais.</p></div>
+    <div class="fc"><div class="fc-ico">&#128106;</div><h3>Momento em Família</h3><p>Mais do que leitura — é conexão, fé e memória. Um ritual diário que fortalece a família.</p></div>
+  </div>
+</section>
+
+<!-- HISTÓRIAS PREVIEW — 4 cards clicáveis com leitor real -->
+<section class="stories">
+  <div class="wrap tc rev">
+    <h2>Simples por dentro, <em>fácil de usar</em> no dia a dia</h2>
+    <p class="st-sub">Clique em uma história abaixo e experimente como seus filhos vão ler no app — é exatamente assim.</p>
+  </div>
+  <div class="st-grid wrap rev" id="demoGrid">
+    <!-- preenchido pelo JS via DEMO_STORIES -->
+  </div>
+  <p class="st-more">...e mais <strong>361 histórias</strong> esperando por seus filhos.</p>
+
+  <!-- CTA 1 — após prévia das histórias -->
+  <div class="inline-cta rev">
+    <p class="inline-cta-txt">Seus filhos podem começar hoje mesmo — acesso imediato após a compra.</p>
+    <a class="btn-m" id="storiesCta" href="#" style="display:inline-flex">Quero Ensinar Meu Filho Agora &nbsp;&#8594;</a>
+    <div class="inline-cta-price"><span id="storiesFrom"></span> &nbsp;<strong id="storiesPor"></strong> &nbsp;<small>por 1 ano</small></div>
+  </div>
+</section>
+
+<!-- MODAL LEITOR DE HISTÓRIA -->
+<div class="story-modal" id="storyModal" role="dialog" aria-modal="true">
+  <div class="story-modal-overlay" onclick="closeStory()"></div>
+  <div class="story-modal-box">
+
+    <!-- Cabeçalho -->
+    <div class="sm-header">
+      <div class="sm-meta">
+        <span class="sm-category" id="smCategory"></span>
+        <span class="sm-ref" id="smRef"></span>
+      </div>
+      <button class="sm-close" onclick="closeStory()" aria-label="Fechar">&#10005;</button>
+    </div>
+
+    <!-- Emoji + Título -->
+    <div class="sm-title-row">
+      <div class="sm-emoji" id="smEmoji"></div>
+      <h2 class="sm-title" id="smTitle"></h2>
+    </div>
+
+    <!-- Corpo da história -->
+    <div class="sm-body" id="smBody"></div>
+
+    <!-- Lições -->
+    <div class="sm-lessons">
+      <div class="sm-lessons-label">O que aprender hoje</div>
+      <ul class="sm-lessons-list" id="smLessons"></ul>
+    </div>
+
+    <!-- Ação — marcar como lida -->
+    <div class="sm-footer">
+      <button class="sm-read-btn" id="smReadBtn" onclick="markRead()">
+        <span id="smReadIcon">&#9711;</span>
+        <span id="smReadTxt">Marcar como lida</span>
+      </button>
+      <div class="sm-read-count">
+        <span id="smReadCount">0</span> de 365 histórias lidas
+      </div>
+    </div>
+
+    <!-- CTA dentro do modal -->
+    <div class="sm-cta-box">
+      <p>Gostou? Acesse as <strong>365 histórias completas</strong> para ler com seus filhos todos os dias.</p>
+      <a class="btn-m sm-cta-btn" id="smCta" href="#" style="font-size:1rem;padding:.75rem 1.8rem">
+        Quero Acesso Completo &nbsp;&#8594;
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<!-- VERSÍCULO -->
+<div class="vers">
+  <div class="wrap">
+    <blockquote>"Instrua a criança no caminho em que deve andar, e quando ela envelhecer não se desviará dele."</blockquote>
+    <cite>Provérbios 22:6</cite>
+  </div>
+</div>
+
+<!-- DEPOIMENTOS -->
+<section class="testi">
+  <div class="wrap tc rev">
+    <span class="badge" id="testiBadge"></span>
+    <h2>O que as famílias estão vivendo<br/>com o Tesouros da Bíblia Kids</h2>
+    <p class="testi-sub">Relatos de famílias que finalmente conseguiram transformar o devocional em um momento simples e especial.</p>
+  </div>
+
+  <!-- 3 primeiros depoimentos -->
+  <div class="testi-grid wrap rev">
+    <div class="tc-card tc-feat">
+      <div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="tc-txt">"Antes, a gente sempre falava que ia fazer devocional com as crianças, mas nunca conseguia manter. Agora elas mesmas pedem a história do dia antes de dormir. Virou um momento muito precioso para nós."</p>
+      <div class="tc-auth"><div class="tc-av-img"><img src="avatars/ana.jpg" alt="Ana Paula"/></div><div class="tc-inf"><strong>Ana Paula S.</strong><span>Mãe de 2 filhos</span><div class="tc-bdg">Família usuária</div></div></div>
+    </div>
+    <div class="tc-card">
+      <div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="tc-txt">"Eu tinha receio de ensinar errado ou não saber explicar. O material deixou tudo mais simples, natural e fiel à Bíblia. Hoje usamos em casa e também na igreja."</p>
+      <div class="tc-auth"><div class="tc-av-img"><img src="avatars/carlos.jpg" alt="Carlos"/></div><div class="tc-inf"><strong>Carlos e Priscila</strong><span>Pais e líderes na igreja</span><div class="tc-bdg">Família usuária</div></div></div>
+    </div>
+    <div class="tc-card">
+      <div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="tc-txt">"Tenho filhos pequenos e não sabia por onde começar. Com poucos minutos por dia, conseguimos criar um momento com Deus em família que ficou leve, bonito e possível de manter."</p>
+      <div class="tc-auth"><div class="tc-av-img"><img src="avatars/juliana.jpg" alt="Juliana"/></div><div class="tc-inf"><strong>Juliana M.</strong><span>Mãe de 3 filhos pequenos</span><div class="tc-bdg">Família usuária</div></div></div>
+    </div>
+  </div>
+
+  <!-- CTA 2 — no meio dos depoimentos, aproveitando o calor emocional (Fix 3) -->
+  <div class="inline-cta inline-cta--dark rev">
+    <p class="inline-cta-txt">Essas famílias já deram o primeiro passo. Você também pode.</p>
+    <a class="btn-m" id="testiMidCta" href="#" style="display:inline-flex">Quero Começar Hoje &nbsp;&#8594;</a>
+    <div class="inline-cta-price"><span id="testiMidFrom"></span> &nbsp;<strong id="testiMidPor"></strong> &nbsp;<small>por 1 ano — família completa</small></div>
+  </div>
+
+  <!-- 3 últimos depoimentos -->
+  <div class="testi-grid wrap rev" style="margin-top:0">
+    <div class="tc-card">
+      <div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="tc-txt">"Uso na Escola Bíblica Dominical. As histórias são perfeitas — linguagem simples, lições claras, e as crianças ficam engajadas do início ao fim."</p>
+      <div class="tc-auth"><div class="tc-av-img"><img src="avatars/marcos.jpg" alt="Pr. Marcos"/></div><div class="tc-inf"><strong>Pr. Marcos L.</strong><span>Pastor — Igreja Batista, GO</span><div class="tc-bdg">Igreja usuária</div></div></div>
+    </div>
+    <div class="tc-card">
+      <div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="tc-txt">"Meu filho de 8 anos leu 40 histórias em um mês. Ele mesmo controla o progresso e faz questão de mostrar. Educação bíblica virou algo esperado e divertido."</p>
+      <div class="tc-auth"><div class="tc-av-img"><img src="avatars/ricardo.jpg" alt="Ricardo"/></div><div class="tc-inf"><strong>Ricardo F.</strong><span>Pai — Maringá/PR</span><div class="tc-bdg">Família usuária</div></div></div>
+    </div>
+    <div class="tc-card">
+      <div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="tc-txt">"As histórias são completamente fiéis à Bíblia. Sou educadora e professora de EBD — foi o melhor material infantil cristão que encontrei."</p>
+      <div class="tc-auth"><div class="tc-av-img"><img src="avatars/simone.jpg" alt="Simone"/></div><div class="tc-inf"><strong>Simone A.</strong><span>Educadora cristã — RS</span><div class="tc-bdg">Família usuária</div></div></div>
+    </div>
+  </div>
+
+  <!-- CTA 3 — após todos os depoimentos (Fix 3) -->
+  <div class="inline-cta rev">
+    <p class="inline-cta-txt">Mais de 500 famílias já estão usando. Garanta o acesso da sua.</p>
+    <a class="btn-m" id="testiEndCta" href="#planos" style="display:inline-flex">Ver Planos e Preços &nbsp;&#8595;</a>
+    <div class="inline-cta-price"><span id="testiEndFrom"></span> &nbsp;<strong id="testiEndPor"></strong> &nbsp;<small>acesso por 1 ano</small></div>
+  </div>
+</section>
+
+<!-- PREÇOS -->
+<section class="pricing" id="planos">
+  <div class="wrap tc rev">
+    <h2>Escolha o plano <em>ideal para você</em></h2>
+    <p class="p-sub">Acesso anual sem mensalidade. Cancele quando quiser. Garantia de 7 dias.</p>
+  </div>
+  <div class="p-anchor rev">
+    <div class="pa-lbl">Plano mais popular</div>
+    <div class="pa-from" id="paFrom"></div>
+    <div class="pa-by">por apenas</div>
+    <div class="pa-main" id="paMain"></div>
+    <div class="pa-per" id="paPer"></div>
+    <div class="pa-save" id="paSave"></div>
+    <a class="btn-m" id="paCta" href="#" style="display:inline-flex">Quero o Plano Familiar &nbsp;&#8594;</a>
+  </div>
+  <div class="plans rev">
+    <div class="plan">
+      <div class="plan-ico">&#128100;</div>
+      <div class="plan-name">Individual</div>
+      <p class="plan-desc">Ideal para ler sozinho ou com os filhos no mesmo dispositivo.</p>
+      <div class="plan-pb"><div class="plan-from" id="pIFrom"></div><div class="plan-main" id="pIMain"></div><div class="plan-per" id="pIPer"></div></div>
+      <ul class="plan-list"><li>365 histórias bíblicas completas</li><li>Acesso em qualquer dispositivo</li><li>Progresso salvo na nuvem</li><li>Busca por personagem ou tema</li><li>Funciona como app no celular</li></ul>
+      <a class="plan-btn" id="pIBtn" href="#">Quero o Individual</a>
+    </div>
+    <div class="plan feat">
+      <div class="plan-top">Mais popular</div>
+      <div class="plan-ico">&#128106;</div>
+      <div class="plan-name">Familiar</div>
+      <p class="plan-desc">Toda a família acessa com um único código. Cada membro com seu próprio progresso.</p>
+      <div class="plan-pb"><div class="plan-from" id="pFFrom"></div><div class="plan-main" id="pFMain"></div><div class="plan-per" id="pFPer"></div></div>
+      <ul class="plan-list"><li>Tudo do plano Individual</li><li>Até 6 membros da família</li><li>Progresso individual por membro</li><li>Convide por link direto</li><li>Painel de gestão familiar</li><li>Suporte via WhatsApp</li></ul>
+      <a class="plan-btn" id="pFBtn" href="#">Quero o Familiar</a>
+    </div>
+    <div class="plan">
+      <div class="plan-ico">&#9962;</div>
+      <div class="plan-name">Igreja / Grupo</div>
+      <p class="plan-desc">Para pastores, líderes de EBD e grupos que usam nas atividades da igreja.</p>
+      <div class="plan-pb"><div class="plan-from" id="pGFrom"></div><div class="plan-main" id="pGMain"></div><div class="plan-per" id="pGPer"></div></div>
+      <ul class="plan-list"><li>Tudo do plano Familiar</li><li>Até 50 membros no grupo</li><li>Painel de gestão completo</li><li>Adicione e remova membros</li><li>Ideal para Escola Bíblica</li><li>Suporte dedicado via WhatsApp</li></ul>
+      <a class="plan-btn" id="pGBtn" href="#">Quero o Igreja/Grupo</a>
+    </div>
+  </div>
+  <p class="p-note">Cartão, PIX ou Boleto &nbsp;&bull;&nbsp; Pagamento 100% seguro &nbsp;&bull;&nbsp; Acesso imediato após confirmação</p>
+</section>
+
+<!-- GARANTIA -->
+<section class="guar">
+  <div class="guar-card rev">
+    <h2>Garantia Total de 7 Dias</h2>
+    <p>Experimente por 7 dias completos. Se por qualquer motivo não ficar satisfeito, <strong>devolvemos 100% do seu dinheiro — sem perguntas, sem burocracia.</strong><br/><br/>Você não tem nada a perder. Só a ganhar com filhos que conhecem e amam a Palavra de Deus.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="wrap-sm">
+    <h2>Perguntas frequentes</h2>
+    <div class="faq-list">
+      <div class="fi"><div class="fq" onclick="doFaq(this)">Precisa instalar algum aplicativo?<span class="fa-ico">&#9660;</span></div><div class="fa">Não. Funciona direto no navegador do celular, tablet ou computador. É só abrir o link e acessar. Dá para adicionar na tela inicial como app se quiser, mas não é obrigatório.</div></div>
+      <div class="fi"><div class="fq" onclick="doFaq(this)">Funciona no Android e iPhone?<span class="fa-ico">&#9660;</span></div><div class="fa">Sim. Funciona em qualquer dispositivo com navegador: Android, iPhone, iPad, Windows ou Mac. Sem restrição de sistema operacional.</div></div>
+      <div class="fi"><div class="fq" onclick="doFaq(this)">A partir de qual idade é recomendado?<span class="fa-ico">&#9660;</span></div><div class="fa">As histórias foram escritas para crianças de 4 a 12 anos. Para crianças menores, os pais leem junto. Para os maiores, as próprias crianças já leem e acompanham o progresso.</div></div>
+      <div class="fi"><div class="fq" onclick="doFaq(this)">O plano familiar cobre quantas pessoas?<span class="fa-ico">&#9660;</span></div><div class="fa">Até 6 membros. Cada um com sua própria conta, login e progresso. Para grupos maiores existe o Plano Igreja/Grupo para até 50 pessoas.</div></div>
+      <div class="fi"><div class="fq" onclick="doFaq(this)">O conteúdo é fiel à Bíblia?<span class="fa-ico">&#9660;</span></div><div class="fa">Absolutamente. Todas as 365 histórias são adaptações fiéis do texto bíblico, com referência à passagem original em cada história. Sem inventar ou distorcer.</div></div>
+      <div class="fi"><div class="fq" onclick="doFaq(this)">Como recebo o acesso após a compra?<span class="fa-ico">&#9660;</span></div><div class="fa">Imediatamente após a confirmação do pagamento você recebe um código por e-mail. Digite no site, crie sua conta e pronto — acesso liberado na hora.</div></div>
+      <div class="fi"><div class="fq" onclick="doFaq(this)">Como funciona a garantia de 7 dias?<span class="fa-ico">&#9660;</span></div><div class="fa">Você tem 7 dias para experimentar. Se não gostar, basta entrar em contato e devolvemos 100% do valor pago, sem perguntas.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="fcta">
+  <div class="wrap rev">
+    <h2>Comece hoje a construir o amor<br/>pela Bíblia no coração<br/>dos seus <em>filhos</em></h2>
+    <p>Cada dia que passa é um dia a menos para plantar a Palavra de Deus na vida das suas crianças. O melhor momento é agora.</p>
+    <div class="fp-box">
+      <div class="fp-from" id="fpFrom"></div>
+      <div class="fp-main" id="fpMain"></div>
+      <div class="fp-per">por 1 ano — acesso imediato</div>
+    </div>
+    <a class="btn-m" id="finalCta" href="#" style="display:inline-flex">Quero Acesso ao Tesouros da Bíblia Kids &nbsp;&#8594;</a>
+    <div class="trust" style="margin-top:1.1rem">
+      <span>Acesso imediato</span><span>Garantia de 7 dias</span><span>Sem mensalidade</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-brand">Tesouros da <span>Bíblia Kids</span></div>
+  <p>Um projeto criado para ajudar famílias cristãs a ensinarem a Palavra de Deus às crianças de forma simples, envolvente e fiel à Bíblia.</p>
+  <div class="f-links">
+    <a href="#">Política de Privacidade</a>
+    <a href="#">Termos de Uso</a>
+    <a id="wppFoot" href="#">Contato via WhatsApp</a>
+  </div>
+  <div class="f-bot">Desenvolvido com dedicação para a glória de Deus &bull; "Instrua a criança no caminho em que deve andar" — Provérbios 22:6</div>
+</footer>
+
+<!-- STICKY MOBILE -->
+<div class="sticky" id="stickyBar">
+  <a id="stickyBtn" href="#"><span id="stickyTxt"></span></a>
+  <small id="stickyDe"></small>
+</div>
+
+<!-- WHATSAPP -->
+<div class="wpp"><a id="wppF" href="#" target="_blank" rel="noopener">&#128172;</a></div>
+
+<script>
+var DEMO_STORIES = [
+  {
+    id: 1,
+    emoji: "🌍",
+    title: "A Criação do Mundo",
+    ref: "Gênesis 1",
+    category: "Antigo Testamento",
+    preview: "No começo não havia nada. Então Deus falou e tudo começou a existir...",
+    story: [
+      "No começo não havia nada — só Deus.",
+      "Então Deus falou, e tudo começou a existir!",
+      "No primeiro dia criou a luz. E viu que era boa.",
+      "No segundo dia fez o céu azul.",
+      "No terceiro dia apareceram a terra seca, os mares e as plantas.",
+      "No quarto dia colocou o sol, a lua e as estrelas no céu.",
+      "No quinto dia os peixes encheram os mares e os pássaros voaram pelo céu.",
+      "No sexto dia Deus fez os animais e criou o homem e a mulher à Sua imagem.",
+      "No sétimo dia Deus descansou e abençoou aquele dia.",
+      "Tudo que Deus fez era muito bom!"
+    ],
+    lesson: ["Deus criou tudo com amor e cuidado","Somos feitos à imagem de Deus","Tudo que Deus faz é bom"]
+  },
+  {
+    id: 8,
+    emoji: "🏔️",
+    title: "Abraão e Isaque no Monte",
+    ref: "Gênesis 22:1-18",
+    category: "Antigo Testamento",
+    preview: "Deus testou a fé de Abraão pedindo algo muito difícil. Mas tinha um plano...",
+    story: [
+      "Deus chamou Abraão: — Leve Isaque ao monte e oferece-o a Mim.",
+      "Abraão ficou com o coração partido — mas confiou em Deus.",
+      "Pai e filho subiram juntos.",
+      "Isaque perguntou: — Pai, onde está o cordeiro para a oferta?",
+      "Abraão respondeu com fé: — Deus mesmo proverá, meu filho.",
+      "Quando Abraão estava prestes a obedecer, o anjo do Senhor chamou: — Pare!",
+      "— Agora sei que você teme a Deus!",
+      "Abraão viu um carneiro preso num arbusto e o ofereceu no lugar de Isaque.",
+      "Deus proveu! O lugar foi chamado Jeová-jireh: O Senhor Proverá.",
+      "Deus nunca quis a morte de Isaque — queria ver a fé de Abraão."
+    ],
+    lesson: ["Deus sempre provê","A obediência a Deus nunca é em vão","Jeová-jireh: o Senhor provê"]
+  },
+  {
+    id: 57,
+    emoji: "🍞",
+    title: "A Multiplicação dos Pães",
+    ref: "João 6:1-14",
+    category: "Vida de Jesus",
+    preview: "Uma multidão com fome. Um menino com cinco pães e dois peixes. Jesus fez um milagre...",
+    story: [
+      "Uma grande multidão seguia Jesus para ouvir Seus ensinamentos.",
+      "O dia passou e as pessoas estavam com fome.",
+      "Os discípulos disseram: — Não temos comida para tanta gente!",
+      "Mas um menino se aproximou com sua merenda: cinco pães e dois peixinhos.",
+      "Jesus pegou os pães e peixes, olhou para o céu e deu graças a Deus.",
+      "Depois mandou os discípulos distribuírem para o povo.",
+      "Um milagre aconteceu! Os pães e peixes não acabavam!",
+      "Todos comeram até ficar satisfeitos — mais de cinco mil pessoas!",
+      "E ainda sobraram doze cestos cheios!",
+      "Jesus cuida de todas as nossas necessidades."
+    ],
+    lesson: ["Jesus se importa com nossas necessidades","O pouco nas mãos de Jesus faz milagre","Devemos ser generosos como o menino"]
+  },
+  {
+    id: 105,
+    emoji: "💝",
+    title: "Nada Nos Separa do Amor de Deus",
+    ref: "Romanos 8:38-39",
+    category: "Cartas de Paulo",
+    preview: "Paulo fez uma lista de tudo que poderia nos separar do amor de Deus. Nada consegue!",
+    story: [
+      "Paulo escreveu algo que precisa ficar gravado no coração.",
+      "— Estou convencido de que nem morte nem vida...",
+      "Nem anjos nem demônios...",
+      "Nem o presente nem o futuro...",
+      "Nem qualquer poder...",
+      "Nem o que está em cima nem o que está embaixo...",
+      "Nem coisa alguma em toda a criação...",
+      "Poderá nos separar do amor de Deus!",
+      "Do amor que está em Cristo Jesus, nosso Senhor.",
+      "Durma com essa certeza: o amor de Deus por você nunca vai acabar!"
+    ],
+    lesson: ["O amor de Deus nunca acaba","Nada pode nos separar do amor de Deus","Somos amados incondicionalmente"]
+  }
+];
+</script>
+<script src="config.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
